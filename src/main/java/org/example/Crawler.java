@@ -29,6 +29,7 @@ public class Crawler {
             Document document = Jsoup.connect(url).timeout(5000).get();
 
             // Indexer work starts here
+            Indexer indexer = new Indexer(document, url);
             System.out.println(document.title());
             Elements availableLinksOnPage = document.select("a[href]");
 
